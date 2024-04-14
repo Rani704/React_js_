@@ -1,22 +1,27 @@
-import react from "react"
-import SlotM from "./components/Slot";
-const App = () =>{
-return (
+import React, { useState } from "react";
+
+const App =() =>{
+   
+   const state =useState();
+   const [count ,setCount] =useState(0);
+   
+   
+   const IncNum = () =>{
+      setCount(count+1);
+      // console.log('clicked' + count++);
+   };
+
+return(
    <>
    
-      <h1 className="heading_style">🎰 Welcome to <span style ={{fontWeight:'bold'}}>Slot machine game</span>🎰{" "}
-      </h1>
-      <div className="slotmachine">
-      <SlotM  x='😊' y='😊' z='😊'/>
-      <hr />
-      <SlotM x='😎' y='🤷‍♀️' z='✍️'/>
-      <hr />
-      <SlotM x='🎶' y='🤩' z='😑'/>
-      <hr />
-   <SlotM x='🍎' y='🍎' z='🍎'/>
-      </div>
-      </>
-     
+   <div className="button_click">
+      <h1>{count}</h1>
+      <button onClick={IncNum}>CLICK ME</button>
+   </div>
+  
+</>
 );
-}
+  
+
+};
 export default App;
